@@ -1,12 +1,4 @@
-import {
-  AfterViewInit,
-  Component,
-  OnDestroy,
-  OnInit,
-  ViewChild,
-} from '@angular/core';
-import { Subject } from 'rxjs';
-import { takeUntil } from 'rxjs/operators';
+import { Component, ViewChild } from '@angular/core';
 
 import { NzTableComponent } from 'ng-zorro-antd/table';
 
@@ -28,7 +20,7 @@ export interface VirtualDataInterface {
     [nzVirtualForTrackBy]="trackByIndex"
     [nzFrontPagination]="false"
     [nzShowPagination]="false"
-    [nzScroll]="{ x: '1200px', y: '240px' }"
+    [nzScroll]="{ x: '2200px', y: '240px' }"
   >
     <thead>
       <tr>
@@ -43,6 +35,16 @@ export interface VirtualDataInterface {
         <th>Column 6</th>
         <th>Column 7</th>
         <th>Column 8</th>
+        <th>Column 9</th>
+        <th>Column 10</th>
+        <th>Column 11</th>
+        <th>Column 12</th>
+        <th>Column 13</th>
+        <th>Column 14</th>
+        <th>Column 15</th>
+        <th>Column 16</th>
+        <th>Column 17</th>
+        <th>Column 18</th>
         <th nzRight>Action</th>
       </tr>
     </thead>
@@ -52,6 +54,16 @@ export interface VirtualDataInterface {
           <td nzLeft>{{ data.name }}</td>
           <td nzLeft>{{ data.age }}</td>
           <td>{{ data.index }}</td>
+          <td>{{ data.address }}</td>
+          <td>{{ data.address }}</td>
+          <td>{{ data.address }}</td>
+          <td>{{ data.address }}</td>
+          <td>{{ data.address }}</td>
+          <td>{{ data.address }}</td>
+          <td>{{ data.address }}</td>
+          <td>{{ data.address }}</td>
+          <td>{{ data.address }}</td>
+          <td>{{ data.address }}</td>
           <td>{{ data.address }}</td>
           <td>{{ data.address }}</td>
           <td>{{ data.address }}</td>
@@ -70,8 +82,6 @@ export interface VirtualDataInterface {
 `,
 })
 export class AppComponent {
-  @ViewChild('virtualTable', { static: false })
-  nzTableComponent?: NzTableComponent<VirtualDataInterface>;
   listOfData: VirtualDataInterface[] = [];
 
   trackByIndex(_: number, data: VirtualDataInterface): number {
